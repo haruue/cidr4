@@ -1,4 +1,4 @@
-package cidrreverse
+package cidr4
 
 import "testing"
 
