@@ -44,3 +44,10 @@ see [`ExampleCIDRv4Set_Minus`](cidrset_test.go#L13) for an example to use this
 library.
 
 
+## Disclaimer
+
+This library will always merge IP ranges when possible and split IP ranges
+whenever required. If you work on a BGP network, you'd better not use this
+library to "optimize" your route table. I won't take responsibility if you leak
+your route everywhere.
+
