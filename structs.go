@@ -55,7 +55,7 @@ func ParseMASKv4(s string) (m MASKv4, err error) {
 		return
 	}
 	if mi < 0 || mi > 32 {
-		err = fmt.Errorf("ParseIPv4: cannot parse %s as IPv4 address: %d not in 0-32", s, mi)
+		err = fmt.Errorf("ParseMASKv4: cannot parse %s as IPv4 mask: %d not in 0-32", s, mi)
 		return
 	}
 	m = MASKv4(mi)
@@ -108,7 +108,7 @@ func ParseCIDRv4(s string) (c CIDRv4, err error) {
 	return
 }
 
-func (c *CIDRv4) Standardize()  {
+func (c *CIDRv4) Standardize() {
 	c.IP = c.IP & c.Mask.Bits()
 }
 

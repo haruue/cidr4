@@ -106,7 +106,7 @@ func (s *CIDRv4Set) Minus(c CIDRv4) {
 
 	for m := container.Mask + 1; m <= c.Mask; m++ {
 		nc := CIDRv4{
-			IP:   c.IP^(1 << (32 - m)),
+			IP:   c.IP ^ (1 << (32 - m)),
 			Mask: m,
 		}
 		nc.Standardize()
